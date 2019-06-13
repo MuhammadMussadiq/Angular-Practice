@@ -1,0 +1,19 @@
+
+<br> <br><br>
+<div class="container">
+  <h4 class="text-center">Assignment--1 Data Binding Parctice</h4>
+
+  <div class="jumbotron">
+    Write some text in below field
+    <input type="text" [(ngModel)] = "username"/>
+    <p>TextField contains: {{username}}</p>
+
+    <br>
+    <input type="button"
+           class="btn btn-primary"
+           value="Click me to reset the field"
+           (click)="onResetBtnClicked()"
+           [disabled]="username ? false : true"/>
+  </div>
+
+</div>
