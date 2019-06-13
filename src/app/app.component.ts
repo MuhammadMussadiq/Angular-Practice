@@ -6,9 +6,17 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public username: string;
+  public showSecret: Boolean;
+  public logs: string[] = [];
 
-  onResetBtnClicked() {
-    this.username = '';
+  onToggledBtnClicked() {
+
+    this.logs.push("Toggle Button clicked at: "  + new Date());
+
+    if (this.showSecret) {
+      this.showSecret = false;
+    } else {
+      this.showSecret = true;
+    }
   }
 }

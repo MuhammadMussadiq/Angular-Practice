@@ -1,19 +1,20 @@
-
 <br> <br><br>
 <div class="container">
-  <h4 class="text-center">Assignment--1 Data Binding Parctice</h4>
+  <h4 class="text-center">Assignment--1 Directives Parctice</h4>
 
   <div class="jumbotron">
-    Write some text in below field
-    <input type="text" [(ngModel)] = "username"/>
-    <p>TextField contains: {{username}}</p>
-
-    <br>
     <input type="button"
            class="btn btn-primary"
-           value="Click me to reset the field"
-           (click)="onResetBtnClicked()"
-           [disabled]="username ? false : true"/>
+           value="Display Details"
+           (click)="onToggledBtnClicked()"/>
+
+    <p *ngIf="showSecret === true">Secret Text. Don't share with anyone.</p>
+    <br><br>
+    <div>
+      <p *ngFor="let log of logs; let i=index;"
+         [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : ''}"
+         [ngClass]="{'text-color': i >= 4}"> {{log}}</p>
+    </div>
   </div>
 
 </div>
